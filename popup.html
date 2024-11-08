@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tab Folder Manager</title>
+  <style>
+    body {
+      width: 400px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    .folder {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }
+    .folder-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .folder-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .folder.expanded .folder-content {
+      display: block;
+    }
+    .tab-item {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+    .tab-item:hover {
+      background: #f0f0f0;
+    }
+    .tab-favicon {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+    }
+    .tab-title {
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .tab-actions {
+      display: flex;
+      gap: 5px;
+    }
+    .shared-indicator {
+      color: #666;
+      font-size: 12px;
+      font-style: italic;
+    }
+    button {
+      padding: 5px 10px;
+      margin: 2px;
+      cursor: pointer;
+    }
+    .tab-button {
+      padding: 2px 5px;
+      font-size: 12px;
+    }
+    #current-tabs {
+      margin-top: 15px;
+      border-top: 1px solid #ccc;
+      padding-top: 15px;
+    }
+    #new-folder-form {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .folder-tabs-count {
+      color: #666;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    .credit {
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      font-size: 10px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div id="new-folder-form">
+    <input type="text" id="folder-name" placeholder="New folder name">
+    <button id="create-folder">Create New Folder</button>
+  </div>
+  <div id="folders-container"></div>
+  <div id="current-tabs">
+    <h3>Current Tabs</h3>
+    <div id="tabs-list"></div>
+  </div>
+
+    <div class="credit">Build by <a href="https://x.com/angkul07" target="_blank">Angkul</a></div>
+  <script src="popup.js"></script>
+</body>
+</html>
